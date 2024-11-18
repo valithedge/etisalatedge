@@ -3,15 +3,10 @@ export default function decorate(block) {
     //console.log("rows0 = " + rows[0].innerHTML);
     //const cols = [...rows[0].children];
     var cols = '';
-    var flag = '';
     //console.log("cols = " + cols[0].innerHTML);
     var slide = '<section class="eand-hero-banner"><div class="container position-relative"><div class="swiper"><div class="swiper-wrapper">';
     for (let j = 0; j < rows.length; j++) {
         cols = [...rows[j].children];
-        if( cols[0] != 'null' || cols[1] != 'null' || cols[2] != 'null' || cols[3] != 'null')
-        {
-            flag='true'
-        }
         slide += '<div class="swiper-slide"><div class="hero-banner-tile align-items-lg-center bg-eand-mimosa-light position-relative d-flex flex-column flex-lg-row rounded-24 overflow-hidden">';
     for (let i = 0; i < cols.length; i++) {
         const collection = cols[i].children;
@@ -38,8 +33,9 @@ export default function decorate(block) {
 
         }
     }
+    slide += '</div></div>';
 }
-    slide += '</div></div></div><!-- swiper pagination | always same --><div class="swiper-pagination pagination-lg-left mb-12 mb-lg-32 generic"></div></div><!-- swiper arrows | always same --><div class="swiper-button-next generic icon icon-lg-48 d-none d-lg-flex flex-center"><img src="https://www.etisalat.ae/content/dam/etisalat/consumer/nwt/resources/img/svg-icons/icon-carousel-next.svg" alt=""></div><div class="swiper-button-prev generic icon icon-lg-48 d-none d-lg-flex flex-center"><img src="https://www.etisalat.ae/content/dam/etisalat/consumer/nwt/resources/img/svg-icons/icon-carousel-prev.svg" alt=""></div></div></section>';
+    slide += '</div><!-- swiper pagination | always same --><div class="swiper-pagination pagination-lg-left mb-12 mb-lg-32 generic"></div></div><!-- swiper arrows | always same --><div class="swiper-button-next generic icon icon-lg-48 d-none d-lg-flex flex-center"><img src="https://www.etisalat.ae/content/dam/etisalat/consumer/nwt/resources/img/svg-icons/icon-carousel-next.svg" alt=""></div><div class="swiper-button-prev generic icon icon-lg-48 d-none d-lg-flex flex-center"><img src="https://www.etisalat.ae/content/dam/etisalat/consumer/nwt/resources/img/svg-icons/icon-carousel-prev.svg" alt=""></div></div></section>';
     block.textContent = '';
     block.innerHTML=slide;
 }
