@@ -18,8 +18,8 @@ export default function decorate(block) {
             //console.log("child1 tag= "+tagelement.children.item(0));
             Array.from(collection).forEach(function (element) {
                 const childelement = element.children;
-                console.log("element tag= "+element.childNodes[0].getAttribute("href"));
-                console.log("child tag= "+childelement);
+                //console.log("element tag= "+element.childNodes[0].getAttribute("href"));
+                //console.log("child tag= "+childelement);
                 //tagelement =childelement.item(0); // it returns href value
                 tagelement = element.childNodes[0].getAttribute("href"); // it returns href value
                 // console.log("child1 tag= "+tagelement);

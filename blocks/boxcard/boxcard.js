@@ -1,6 +1,6 @@
 export default function decorate(block) {
     const rows = [...block.children];
-    console.log("Box Card" + rows[0].innerHTML);
+    //console.log("Box Card" + rows[0].innerHTML);
     //const cols = [...rows[0].children];
     var cols = '';
     //console.log("cols = " + cols[0].innerHTML);

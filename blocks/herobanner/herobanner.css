@@ -20,8 +20,8 @@
 }
 
 .hero-banner-tile .img-wrap img {
-    width: inherit!important;
-    height: inherit!important
+    width: 100% !important;
+    height: 100% !important
 }
 
 @media(max-width: 767.98px) {

@@ -119,7 +119,20 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(() => 
+    import('./delayed.js'),
+    import('./jquery-3.7.1.min.js'),
+    import('./select2.min.js'),
+    import('./jquery.validate.js'),
+    import('./app.forms.defaults.js'),
+    import('./bootstrap.bundle.js'),
+    import('./intlTelInput.js'),
+    import('./lazysizes.js'),
+    import('./swiper-bundle.js'),
+    import('./lodash.js'),
+    import('./purify.js'),
+    import('./hero-banner.js'),
+  3000);
   // load anything that can be postponed to the latest here
 }
 
