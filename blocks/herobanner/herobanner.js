@@ -11,7 +11,7 @@ export default function decorate(block) {
     var cta = '';
     var content = '';
     //console.log("cols = " + cols[0].innerHTML);
-    var slide = '<section class="eand-hero-banner"><div class="container position-relative"><div class="swiper"><div class="swiper-wrapper">';
+    var slide = '<section class="eand-hero-banner"><div class="container position-relative new-class-for-eand"><div class="swiper"><div class="swiper-wrapper">';
     for (let j = 0; j < rows.length; j++) {
         cols = [...rows[j].children];
         slide += '<div class="swiper-slide"><div class="hero-banner-tile align-items-lg-center bg-eand-mimosa-light position-relative d-flex flex-column flex-lg-row rounded-24 overflow-hidden">';
