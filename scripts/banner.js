@@ -1,7 +1,7 @@
 import { swiperInit } from "../swiperInitialize";
 //hero banner
 $(document).ready(function() {
-
+//console.log("hero banner js loaded");
     initHeroSwiper();
     screenHeight();
 

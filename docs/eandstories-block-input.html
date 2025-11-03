@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>EandStories Block Input Documentation</title>
+    <style>
+        body { font-family: 'Calibri', sans-serif; margin: 40px; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f5f5f5; }
+        code { background: #f8f8f8; padding: 2px 4px; border-radius: 3px; }
+        pre { background: #f8f8f8; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        h1 { color: #2c5898; }
+        h2 { color: #2c5898; margin-top: 30px; }
+        .note { background: #fff3cd; padding: 10px; border-left: 4px solid #ffc107; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <h1>EandStories Block Input Documentation</h1>
+    
+    <h2>Block Configuration (dataset attributes)</h2>
+    <table>
+        <tr>
+            <th>Attribute Name</th>
+            <th>Purpose</th>
+            <th>Example Value</th>
+            <th>Required</th>
+        </tr>
+        <tr>
+            <td>titleType</td>
+            <td>HTML element for title</td>
+            <td>"h2" (default), "h1", "h3"</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>articleTitle</td>
+            <td>Title text to display</td>
+            <td>"Latest Stories"</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>searchDisabled</td>
+            <td>Hide search form if "true"</td>
+            <td>"true" or "false"</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>searchCategoryResultLbl</td>
+            <td>Text for select option</td>
+            <td>"All Categories"</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>searchCategoryLbl</td>
+            <td>Text for floating label</td>
+            <td>"Select Category"</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+    <h2>Row/Column Input Structure</h2>
+    <table>
+        <tr>
+            <th>Column Index</th>
+            <th>Content</th>
+            <th>Format</th>
+            <th>Required</th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>Category</td>
+            <td>HTML text</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Title</td>
+            <td>HTML text</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Date</td>
+            <td>HTML text</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Description</td>
+            <td>HTML text</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Learn More</td>
+            <td>Link or text</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Image</td>
+            <td>Picture/Image tag</td>
+            <td>No</td>
+        </tr>
+    </table>
+
+    <h2>Example Input HTML</h2>
+    <pre><code>&lt;div class="eandstories" 
+    data-article-title="Latest Stories" 
+    data-search-category-lbl="Select Category" 
+    data-search-category-result-lbl="All Categories"&gt;
+
+    &lt;!-- Row 1 --&gt;
+    &lt;div&gt;
+        &lt;div&gt;Technology&lt;/div&gt;                &lt;!-- col 0: category --&gt;
+        &lt;div&gt;New Features Launch&lt;/div&gt;       &lt;!-- col 1: title --&gt;
+        &lt;div&gt;November 3, 2025&lt;/div&gt;         &lt;!-- col 2: date --&gt;
+        &lt;div&gt;Exciting new features...&lt;/div&gt;  &lt;!-- col 3: description --&gt;
+        &lt;div&gt;&lt;a href="/news/1"&gt;Read More&lt;/a&gt;&lt;/div&gt;  &lt;!-- col 4: learn more --&gt;
+        &lt;div&gt;                               &lt;!-- col 5: image --&gt;
+            &lt;picture&gt;
+                &lt;source srcset="mobile.jpg" media="(max-width: 767px)"&gt;
+                &lt;source srcset="tablet.jpg" media="(max-width: 991px)"&gt;
+                &lt;img src="desktop.jpg" alt="Feature Image" class="cover"&gt;
+            &lt;/picture&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Row 2 --&gt;
+    &lt;div&gt;
+        &lt;div&gt;Business&lt;/div&gt;
+        &lt;div&gt;Q4 Results&lt;/div&gt;
+        &lt;div&gt;November 2, 2025&lt;/div&gt;
+        &lt;div&gt;Financial highlights...&lt;/div&gt;
+        &lt;div&gt;&lt;a href="/news/2"&gt;Learn More&lt;/a&gt;&lt;/div&gt;
+        &lt;div&gt;
+            &lt;img src="business.jpg" alt="Business Chart" class="cover"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+    <h2>Important Notes</h2>
+    <div class="note">
+        <ul>
+            <li>Each row becomes a tile in the output.</li>
+            <li>The Load More button appears automatically when rows.length > 6.</li>
+            <li>All HTML content in columns is preserved (safe HTML allowed).</li>
+            <li>Images support both <code>&lt;picture&gt;</code> and <code>&lt;img&gt;</code> tags.</li>
+            <li>Images are automatically set to lazy-load.</li>
+            <li>Learn More links can be full <code>&lt;a&gt;</code> tags or plain text (converts to link).</li>
+            <li>The category text is used both in the tile header and as a data attribute for filtering.</li>
+            <li>HTML in the category text is stripped when used as a data attribute.</li>
+        </ul>
+    </div>
+
+    <h2>Output Preview</h2>
+    <pre><code>&lt;div class="cmp-articleSearch-search" data-noof-items="2" id="articlelist-3082e3df30"&gt;
+    &lt;div class="tile-boxes-section-wrapper tile-boxes-large filtering"&gt;
+        &lt;!-- Header Container (if rows exist) --&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-xs-12 col-md-9"&gt;
+                    &lt;h2&gt;Latest Stories&lt;/h2&gt;
+                &lt;/div&gt;
+                &lt;!-- Search form (if not disabled) --&gt;
+                &lt;div class="col-xs-12 col-md-3"&gt;...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Tiles Container --&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="tile-boxes-section"&gt;
+                    &lt;div class="tileBoxMobCarWrap"&gt;
+                        &lt;div class="tileboxCarousal"&gt;
+                            &lt;div class="block filter-news-results"&gt;
+                                &lt;!-- Tiles rendered here --&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;!-- Load More (if > 6 items) --&gt;
+                &lt;div class="col-xs-12 col-sm-4 col-sm-offset-4"&gt;...&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</body>
+</html>

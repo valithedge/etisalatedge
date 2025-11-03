@@ -133,6 +133,7 @@ function loadDelayed() {
     import('./purify.js'),
     import('./hero-banner.js'),
     import('./banner.js'),
+    import('./stories.js'),
   3000);
   // load anything that can be postponed to the latest here
 }

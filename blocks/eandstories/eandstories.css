@@ -1,0 +1,8 @@
+.eds-eandstories .tile-box-tile{background:#fff;padding:16px;border-radius:4px}
+.eds-eandstories .img-cover{margin-bottom:12px}
+.eds-eandstories .img-cover img,.eds-eandstories .img-cover picture{width:100%;height:auto;display:block}
+.eds-eandstories .tile-box-body h2{font-size:20px;margin:8px 0}
+.eds-eandstories .annoucements{color:#666;font-size:14px;margin:0}
+.eds-eandstories .annoucement-date{display:block;color:#999;margin-bottom:8px}
+.eds-eandstories .btn-text.btn-green{color:#0a7a3e;text-decoration:none}
+.eds-eandstories .loading-tile{box-sizing:border-box;padding:8px}

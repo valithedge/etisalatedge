@@ -1,7 +1,7 @@
 let options = {};
-console.log("Hero Banner 1");
+//console.log("Hero Banner 1");
 if ($(".swiper-container .swiper-slide").length == 1) {
-  console.log("Hero Banner 2");
+  //console.log("Hero Banner 2");
   options = {
     direction: 'horizontal',
     loop: false,
@@ -17,12 +17,12 @@ if ($(".swiper-container .swiper-slide").length == 1) {
 };
 
 function initHeorBanner() {
-  console.log("Hero Banner 4");
+  //console.log("Hero Banner 4");
   $(document).find('.eand-hero-banner').each(function (index) {
     let delay = $(this).find("#delayTime").length > 0 && $(this).find("#delayTime").val() !== '' ? {
       delay: $(this).find("#delayTime").val()
     } : false;
-    console.log(delay)
+    //console.log(delay)
     $(this).addClass('hbSlider' + index);
     var $contextNavigation = $(this);
     $contextNavigation.find('.swiper-button-next').addClass('hbRight' + index);
@@ -84,8 +84,8 @@ function initHeorBanner() {
 $(document).ready(function () {
   $('.eand-hero-banner .hero-banner-tile .btn-wrapper a').on("click", function () {
     sessionStorage.setItem("AddToBillManage", true)
-    console.log("Hero Banner 5");
+    //console.log("Hero Banner 5");
   })
-  console.log("Hero Banner 3");
+  //console.log("Hero Banner 3");
   initHeorBanner();
 });
